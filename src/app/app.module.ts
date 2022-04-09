@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { AppComponent } from './app.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
@@ -16,7 +17,11 @@ import { OrganizationsComponent } from './organizations/organizations.component'
     RepositoriesComponent,
     OrganizationsComponent,
   ],
-  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), HttpClientModule],
+  imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HttpClientModule,
+    TransferHttpCacheModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
